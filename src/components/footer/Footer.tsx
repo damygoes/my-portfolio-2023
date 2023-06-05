@@ -38,9 +38,9 @@ const Footer = (props: Props) => {
           <TwitterIcon />
         </MotionLink>
       </nav>
-      <div>
-        <p> Built with Nextjs and Tailwind CSS by Me, Myself and I</p>
-      </div>
+      <p className="text-light text-sm text-primary italic">
+        Built with Nextjs and TailwindCSS by Me, Myself and I
+      </p>
     </div>
   );
 };

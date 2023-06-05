@@ -2,16 +2,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import aboutPic from "../../../public/images/developer-pic-2.jpeg";
+import DAMI from "../../../public/images/dami.jpg";
 
 const About = () => {
   return (
     <div id="about" className="my-72 w-full p-4">
-      <h2 className="font-bold text-6xl mb-32 w-full text-left">About</h2>
+      <h2 className="font-bold text-6xl mt-32 mb-24 w-full text-left">About</h2>
       <div className="flex items-center justify-between w-full gap-32">
-        <div className="relative rounded-2xl border-2 border-solid border-black bg-white p-8 w-1/3">
-          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-black" />
+        <div className="relative rounded-2xl border-2 border-solid border-primary bg-neutral p-8 w-1/3">
+          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-primary" />
           <Image
-            src={aboutPic}
+            src={DAMI}
             alt="Damilola Bada"
             className="w-full h-auto rounded-2xl"
           />
@@ -23,15 +24,15 @@ const About = () => {
             passion for cycling. Over the years, I&apos;ve had the privilege of
             not only working on my own
             <Link
-              href="/projects"
-              className="font-bold mx-1 hover:text-blue-300"
+              href="#projects"
+              className="font-bold mx-1 text-accent hover:text-primary"
             >
               projects
             </Link>
             but also collaborating with a
             <Link
               href="https://MyCodeCareer.com"
-              className="font-bold mx-1 hover:text-blue-300"
+              className="font-bold mx-1 text-accent hover:text-primary"
               target="_blank"
             >
               career-coaching company
@@ -43,7 +44,7 @@ const About = () => {
             enhancement of our
             <Link
               href="https://apomap.app/signin"
-              className="font-bold mx-1 hover:text-blue-300"
+              className="font-bold mx-1 text-accent hover:text-primary"
               target="_blank"
             >
               SaaS product
@@ -51,7 +52,7 @@ const About = () => {
             at
             <Link
               href="https://apomap.de/"
-              className="font-bold mx-1 hover:text-blue-300"
+              className="font-bold mx-1 text-accent hover:text-primary"
               target="_blank"
             >
               apomap GmbH.
@@ -61,7 +62,7 @@ const About = () => {
             on my
             <Link
               href="https://www.instagram.com/damy.goes/"
-              className="font-bold mx-1 hover:text-blue-300"
+              className="font-bold mx-1 text-accent hover:text-primary"
               target="_blank"
             >
               Instagram.

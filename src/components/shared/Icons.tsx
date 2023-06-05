@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client";
 type IconProps = { className?: string };
 
 export const GithubIcon = ({ className, ...rest }: IconProps) => (

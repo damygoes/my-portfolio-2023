@@ -35,14 +35,14 @@ const Details = ({
       >
         <h3 className="font-bold text-2xl">
           {position}&nbsp;
-          <Link href={companyLink} target="_blank" className="text-blue-500">
+          <Link href={companyLink} target="_blank" className="text-primary">
             @{company}
           </Link>
         </h3>
-        <span className="capitalize font-medium text-black/50">
+        <p className="capitalize font-medium text-primary/90 mb-1">
           {time} | {address}
-        </span>
-        <p className="font-medium w-full">{work}</p>
+        </p>
+        <p className="w-full mt-2">{work}</p>
       </motion.div>
     </li>
   );
@@ -55,13 +55,13 @@ const Experience = () => {
   });
   return (
     <div id="experience" className="my-72 w-full p-4">
-      <h2 className="font-bold text-6xl mb-32 w-full text-center">
+      <h2 className="font-bold text-6xl mt-32 mb-24 w-full text-left">
         Experience
       </h2>
       <div className="w-[75%] mx-auto relative" ref={ref}>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-14 top-0 w-[4px] h-full bg-black origin-top"
+          className="absolute left-14 top-0 w-[4px] h-full bg-accent origin-top"
         />
         <ul className="w-full flex flex-col items-start justify-between ml-4">
           <Details
@@ -70,31 +70,23 @@ const Experience = () => {
             companyLink="https://apomap.de/"
             time="2022 - Present"
             address="Winterberg, Nordrhein-Westfalen, Germany"
-            work="I am currently working on the advancement and enhancement of our SaaS product at apomap GmbH."
+            work="I am responsible for developing new features and optimizing the existing codebase. Additionally, I integrate third-party SaaS solutions with apomap, aiming to enhance profitability and address users' needs effectively."
           />
           <Details
-            position="Fullstack Developer"
-            company="apomap GmbH"
-            companyLink="https://apomap.de/"
-            time="2022 - Present"
-            address="Winterberg, Nordrhein-Westfalen, Germany"
-            work="I am currently working on the advancement and enhancement of our SaaS product at apomap GmbH."
+            position="Frontend Developer"
+            company="MyCodeCareer"
+            companyLink="https://mycodecareer.com/"
+            time="October 2022 - December 2022"
+            address="Remote"
+            work="Rebuilt company's website using React and TailwindCSS. Additionally, I ensured that the website is responsive and optimized for mobile devices and performed thorough testing to ensure cross-browser compatibility."
           />
           <Details
-            position="Fullstack Developer"
-            company="apomap GmbH"
-            companyLink="https://apomap.de/"
-            time="2022 - Present"
-            address="Winterberg, Nordrhein-Westfalen, Germany"
-            work="I am currently working on the advancement and enhancement of our SaaS product at apomap GmbH."
-          />
-          <Details
-            position="Fullstack Developer"
-            company="apomap GmbH"
-            companyLink="https://apomap.de/"
-            time="2022 - Present"
-            address="Winterberg, Nordrhein-Westfalen, Germany"
-            work="I am currently working on the advancement and enhancement of our SaaS product at apomap GmbH."
+            position="Trainee"
+            company="Brainnest Consulting GmbH"
+            companyLink="https://www.brainnest.consulting/"
+            time="June 2022 - August 2022"
+            address="Bremen, Germany"
+            work="Developed a solid understanding of web developement and best practices for clean code. Additionally, I worked on various projects with other developers using HTML, CSS and Javascript."
           />
         </ul>
       </div>

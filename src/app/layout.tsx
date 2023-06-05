@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} w-full h-full inline-block z-0 bg-white`}
+        className={`${inter.className} w-full h-full inline-block z-0 bg-neutral text-text-dark scroll-smooth`}
       >
         <Navbar />
         {children}

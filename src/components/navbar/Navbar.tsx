@@ -19,8 +19,9 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
     <Link href={href} className={`${className} relative group`}>
       {title}
       <span
-        className={`h-[1px] inline-block bg-black absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 
-        ${isActive ? "w-full" : "w-0"}`}
+        className={`h-[1px] inline-block bg-primary absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
+          isActive ? "w-full" : "w-0"
+        }`}
       >
         &nbsp;
       </span>
@@ -33,10 +34,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`flex items-center justify-between w-full px-32 py-8 font-medium sticky top-0 z-30 shadow-sm `}
-      // className={`flex items-center justify-between w-full px-32 py-8 font-medium sticky top-0 z-30 shadow-sm  ${
-      //   isScrolled ? "bg-red-300" : "bg-transparent"
-      // }`}
+      className={`flex items-center justify-between w-full px-32 py-8 font-medium sticky top-0 z-30 shadow-sm bg-neutral text-text-dark`}
     >
       <nav>
         <CustomLink href="#about" title="About" className="mx-4" />
