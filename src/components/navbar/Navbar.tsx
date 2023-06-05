@@ -1,10 +1,9 @@
 "use client";
-import Link from "next/link";
-import React from "react";
-import Logo from "../shared/Logo";
-import { useRouter, usePathname } from "next/navigation";
-import { GithubIcon, LinkedInIcon, TwitterIcon } from "../shared/Icons";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { GithubIcon, LinkedInIcon, TwitterIcon } from "../shared/Icons";
+import Logo from "../shared/Logo";
 
 type CustomLinkProps = {
   href: string;
@@ -14,7 +13,7 @@ type CustomLinkProps = {
 
 const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
   const pathName = usePathname();
-  const isActive = pathName.startsWith(href);
+  const isActive = pathName?.startsWith(href);
 
   return (
     <Link href={href} className={`${className} relative group`}>
@@ -31,13 +30,18 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
 
 const Navbar = () => {
   const MotionLink = motion(Link);
+
   return (
-    <header className="flex items-center justify-between w-full px-32 py-8 font-medium">
+    <header
+      className={`flex items-center justify-between w-full px-32 py-8 font-medium sticky top-0 z-30 shadow-sm `}
+      // className={`flex items-center justify-between w-full px-32 py-8 font-medium sticky top-0 z-30 shadow-sm  ${
+      //   isScrolled ? "bg-red-300" : "bg-transparent"
+      // }`}
+    >
       <nav>
-        <CustomLink href="/" title="Home" className="mr-4" />
-        <CustomLink href="/about" title="About" className="mx-4" />
-        <CustomLink href="/experience" title="Experience" className="mx-4" />
-        <CustomLink href="/projects" title="Projects" className="ml-4" />
+        <CustomLink href="#about" title="About" className="mx-4" />
+        <CustomLink href="#experience" title="Experience" className="mx-4" />
+        <CustomLink href="#projects" title="Projects" className="ml-4" />
       </nav>
       <nav className="flex items-center justify-center flex-wrap gap-4">
         <MotionLink
