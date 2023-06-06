@@ -26,7 +26,7 @@ const ProjectCard = ({
   return (
     <MotionLink href={projectLink} target="_blank">
       <motion.div
-        className="flex justify-between items-center w-full h-auto gap-4 p-4 rounded-3xl bg-neutral shadow-xl"
+        className="flex flex-col justify-between items-center w-full h-auto gap-4 p-4 rounded-3xl bg-neutral shadow-xl lg:flex-row"
         whileHover={{
           backgroundColor: ["#E9EEF4", "rgba(50, 103, 137, 0.2)", "#E9EEF4"],
           y: [-4, 0, -4, 0],
@@ -38,23 +38,25 @@ const ProjectCard = ({
           },
         }}
       >
-        <div className="w-[40%]">
+        <div className="w-full lg:w-[40%]">
           <Image
             src={projectImage}
             alt={projectName}
-            className="w-full h-[12rem] rounded-2xl"
+            className="w-full h-[12rem] rounded-2xl md:h-auto lg:h-[12rem]"
           />
         </div>
         <div className="flex flex-col justify-between items-start flex-1 gap-2">
-          <h4 className="font-bold text-lg">{projectName}</h4>
-          <p className="text-md font-light text-gray-500 mb-2">
+          <h4 className="font-bold text-lg mt-2 md:text-4xl lg:mt-0 lg:text-lg">
+            {projectName}
+          </h4>
+          <p className="text-md font-light text-gray-500 mb-3 md:text-2xl lg:text-sm">
             {projectDescription}
           </p>
           <div className="flex justify-start items-center w-full flex-wrap gap-2">
             {techStack.map((stack, index) => (
               <div
                 key={index}
-                className="text-xs font-light  border-b border-solid border-b-accent "
+                className="text-xs font-light  border-b border-solid border-b-accent md:text-lg lg:text-xs"
               >
                 {stack}
               </div>

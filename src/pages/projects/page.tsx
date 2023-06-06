@@ -5,12 +5,12 @@ import BURGER from "../../../public/images/burger-up.png";
 
 const Projects = () => {
   return (
-    <div id="projects" className="my-72 w-full p-4">
-      <h2 className="font-bold text-6xl mt-32 mb-24 w-full text-left">
-        Projects
+    <div id="projects" className="my-32 lg:my-72 w-full p-4">
+      <h2 className="font-bold text-4xl mt-32 mb:12 w-full text-left md:text-6xl md:mb-24">
+        Things I&apos;ve Built
       </h2>
-      <div className="flex items-center justify-between w-full gap-32">
-        <div className="text-2xl  text-primary/70 font-light italic w-1/3">
+      <div className="flex flex-col items-center justify-between gap-4 w-full lg:gap-32 lg:flex-row">
+        <div className="invisible lg:visible lg:text-2xl lg:text-primary/70 lg:font-light lg:italic lg:w-1/3">
           <q>
             My code is a reflection of my unwavering dedication and relentless
             pursuit of excellence, as I pour my heart and soul into every line

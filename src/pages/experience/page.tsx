@@ -24,7 +24,7 @@ const Details = ({
   const ref = useRef(null);
   return (
     <li
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="my-8 first:mt-0 last:mb-0 w-full mx-auto flex flex-col items-center justify-between lg:w-[60%]"
       ref={ref}
     >
       <LiIcon reference={ref} />
@@ -33,16 +33,16 @@ const Details = ({
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
-        <h3 className="font-bold text-2xl">
+        <h3 className="font-bold text-lg md:text-4xl lg:text-2xl">
           {position}&nbsp;
           <Link href={companyLink} target="_blank" className="text-primary">
             @{company}
           </Link>
         </h3>
-        <p className="capitalize font-medium text-primary/90 mb-1">
+        <p className="capitalize font-medium text-primary/90 my-2 md:text-2xl lg:text-sm">
           {time} | {address}
         </p>
-        <p className="w-full mt-2">{work}</p>
+        <p className="w-full mt-2 md:text-3xl md:mt-8 lg:text-lg">{work}</p>
       </motion.div>
     </li>
   );
@@ -54,16 +54,16 @@ const Experience = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div id="experience" className="my-72 w-full p-4">
-      <h2 className="font-bold text-6xl mt-32 mb-24 w-full text-left">
-        Experience
+    <div id="experience" className="my-32 lg:my-72 w-full p-4">
+      <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl">
+        Where I&apos;ve Worked
       </h2>
-      <div className="w-[75%] mx-auto relative" ref={ref}>
+      <div className="w-full mx-auto relative lg:w-[75%]" ref={ref}>
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-14 top-0 w-[4px] h-full bg-accent origin-top"
+          className="invisible lg:visible lg:absolute lg:left-14 lg:top-0 lg:w-[4px] lg:h-full lg:bg-accent lg:origin-top"
         />
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
+        <ul className="w-full flex flex-col items-start justify-between lg:ml-4">
           <Details
             position="Fullstack Developer"
             company="apomap GmbH"

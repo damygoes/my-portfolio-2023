@@ -8,7 +8,7 @@ type Props = {};
 const Footer = (props: Props) => {
   const MotionLink = motion(Link);
   return (
-    <div className="flex justify-between items-center w-full gap-8">
+    <div className="flex flex-col justify-between items-center w-full gap-8 lg:flex-row">
       <nav className="flex items-center justify-center flex-wrap gap-4">
         <MotionLink
           href="https://www.linkedin.com/in/damilolabada/"
@@ -38,7 +38,7 @@ const Footer = (props: Props) => {
           <TwitterIcon />
         </MotionLink>
       </nav>
-      <p className="text-light text-sm text-primary italic">
+      <p className="text-light text-xs text-primary italic md:text-sm">
         Built with Nextjs and TailwindCSS by Me, Myself and I
       </p>
     </div>

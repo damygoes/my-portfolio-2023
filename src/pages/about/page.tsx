@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import aboutPic from "../../../public/images/developer-pic-2.jpeg";
 import DAMI from "../../../public/images/dami.jpg";
 
 const About = () => {
   return (
     <div id="about" className="my-72 w-full p-4">
-      <h2 className="font-bold text-6xl mt-32 mb-24 w-full text-left">About</h2>
-      <div className="flex items-center justify-between w-full gap-32">
-        <div className="relative rounded-2xl border-2 border-solid border-primary bg-neutral p-8 w-1/3">
+      <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl">
+        How It All Started
+      </h2>
+      <div className="flex flex-col items-center justify-between w-full gap-16 lg:gap-32 lg:flex-row">
+        <div className="relative w-full rounded-2xl border-2 border-solid border-primary bg-neutral p-8 lg:w-1/3">
           <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-primary" />
           <Image
             src={DAMI}
@@ -18,7 +19,7 @@ const About = () => {
           />
         </div>
         <div className="flex-1">
-          <p className="text-md text-gray-400">
+          <p className="text-md text-text-dark md:text-3xl lg:text-[1rem]">
             I embarked on my web development and coding journey back in 2019
             with the purpose of creating a personal journal dedicated to my
             passion for cycling. Over the years, I&apos;ve had the privilege of
