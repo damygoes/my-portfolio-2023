@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import LiIcon from "@/components/shared/LiIcon";
+import SectionHeading from "@/components/shared/SectionHeading";
 
 type DetailsProps = {
   position: string;
@@ -47,6 +48,7 @@ const Details = ({
     </li>
   );
 };
+
 const Experience = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -55,9 +57,7 @@ const Experience = () => {
   });
   return (
     <div id="experience" className="my-32 lg:my-72 w-full p-4">
-      <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl">
-        Where I&apos;ve Worked
-      </h2>
+      <SectionHeading heading="Where I've Worked" />
       <div className="w-full mx-auto relative lg:w-[75%]" ref={ref}>
         <motion.div
           style={{ scaleY: scrollYProgress }}

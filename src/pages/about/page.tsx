@@ -2,13 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import DAMI from "../../../public/images/dami.jpg";
+import SectionHeading from "@/components/shared/SectionHeading";
 
 const About = () => {
   return (
     <div id="about" className="my-72 w-full p-4">
-      <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl">
-        How It All Started
-      </h2>
+      {/* <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl"></h2> */}
+      <SectionHeading heading="How It All Started" />
       <div className="flex flex-col items-center justify-between w-full gap-16 lg:gap-32 lg:flex-row">
         <div className="relative w-full rounded-2xl border-2 border-solid border-primary bg-neutral p-8 lg:w-1/3">
           <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-primary" />

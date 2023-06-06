@@ -1,12 +1,11 @@
 "use client";
 import { motion, useScroll } from "framer-motion";
 
-type Props = {};
-
 const LiIcon = ({ reference }: any) => {
   const { scrollYProgress } = useScroll({
     target: reference,
     offset: ["center end", "center center"],
+    layoutEffect: false,
   });
   return (
     <figure className="invisible lg:visible lg:absolute lg:left-0 lg:stroke-primary">

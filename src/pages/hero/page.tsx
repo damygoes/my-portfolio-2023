@@ -70,7 +70,12 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="w-full lg:w-1/2">
-        <Image src={profilePic} alt="Damilola Bada" className="w-full h-auto" />
+        <Image
+          src={profilePic}
+          alt="Damilola Bada"
+          className="w-full h-auto"
+          priority
+        />
       </div>
     </div>
   );
