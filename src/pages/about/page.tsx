@@ -1,15 +1,57 @@
 "use client";
+import { motion, useAnimation, useScroll, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import DAMI from "../../../public/images/dami.jpg";
-import SectionHeading from "@/components/shared/SectionHeading";
+
+const fadeAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1, delay: 0.3 } },
+};
 
 const About = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Adjust these values based on your needs
+      const triggerOffset = windowHeight * 0.7; // 70% of window height
+
+      // Check if the section is within the trigger range
+      if (offset > triggerOffset) {
+        controls.start("visible");
+      } else {
+        controls.start("hidden");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [controls]);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"],
+  });
+
   return (
-    <div id="about" className="my-72 w-full p-4">
-      {/* <h2 className="font-bold text-4xl mt-32 mb-24 w-full text-left md:text-6xl"></h2> */}
-      <SectionHeading heading="How It All Started" />
-      <div className="flex flex-col items-center justify-between w-full gap-16 lg:gap-32 lg:flex-row">
+    <div id="about" className="my-72 w-full p-4" ref={ref}>
+      <motion.h2
+        className="font-bold text-4xl mt-32 mb-24 w-full origin-left text-left md:text-6xl"
+        style={{ scaleX: useSpring(scrollYProgress) }}
+      >
+        How It All Started
+      </motion.h2>
+      <motion.div
+        className="flex flex-col items-center justify-between w-full gap-16 lg:gap-32 lg:flex-row"
+        variants={fadeAnimation}
+        initial="hidden"
+        animate={controls}
+      >
         <div className="relative w-full rounded-2xl border-2 border-solid border-primary bg-neutral p-8 lg:w-1/3">
           <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-primary" />
           <Image
@@ -72,7 +114,7 @@ const About = () => {
             importance of work-life balance.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

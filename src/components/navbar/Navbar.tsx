@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { GithubIcon, LinkedInIcon, TwitterIcon } from "../shared/Icons";
 import Logo from "../shared/Logo";
 import { RiMenu3Line, RiCloseFill } from "react-icons/ri";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type CustomLinkProps = {
   href: string;
@@ -21,12 +21,13 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
     <Link
       href={`/${href}`}
       className={`${className} relative group`}
-      scroll={false}
+      scroll
+      as={href}
     >
       {title}
       <span
-        className={`h-[1px] inline-block bg-primary absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
-          isActive ? "w-full" : "w-0"
+        className={`h-[1px] w-0 inline-block bg-primary absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
+          isActive ? "bg-text-dark" : "bg-transparent"
         }`}
       >
         &nbsp;
@@ -38,6 +39,7 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
 const Navbar = () => {
   const MotionLink = motion(Link);
   const router = useRouter();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
