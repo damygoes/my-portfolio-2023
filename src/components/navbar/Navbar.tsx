@@ -18,12 +18,7 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
   const isActive = pathName?.startsWith(href);
 
   return (
-    <Link
-      href={`/${href}`}
-      className={`${className} relative group`}
-      scroll
-      as={href}
-    >
+    <Link href={href} className={`${className} relative group`}>
       {title}
       <span
         className={`h-[1px] w-0 inline-block bg-primary absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${

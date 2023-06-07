@@ -7,7 +7,7 @@ import DAMI from "../../../public/images/dami.jpg";
 
 const fadeAnimation = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 1, delay: 0.3 } },
+  visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } },
 };
 
 const About = () => {
